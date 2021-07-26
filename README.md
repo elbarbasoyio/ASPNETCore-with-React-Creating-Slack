@@ -1,4 +1,4 @@
-# ASPNETCore-with-React-Creating-Slack
+# Slack clone with NETCore and React
 
 In this project we create a Slack clone using NetCore MVC y APIs, Entity Framework, MediatR, 
 CQRS, Signal R, ReactJs, Typescript, Mobx, Axios, FinalForm, JSON Web Tokens, Fluent Validations, AutoMapper, 
