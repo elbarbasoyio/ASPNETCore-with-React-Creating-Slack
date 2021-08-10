@@ -53,7 +53,7 @@ namespace MovieApp
                 endpoints.MapControllerRoute(
                     name: "default",
                     //pattern: "{controller=Home}/{action=Index}/{id?}"); version original 
-                    pattern: "{controller=App}/{action=Index}/{id?}",
+                    pattern: "{controller}/{action}/{id?}",
                     defaults: new { controller = "App", action = "Index"});
             });
         }

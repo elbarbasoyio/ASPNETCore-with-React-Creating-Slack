@@ -8,6 +8,7 @@ namespace MovieApp.Models
 {
     public class MovieViewModel
     {
+        public Guid Id { get; set; }
         [Required(ErrorMessage ="El nombre es un campo requerido")]
         [MaxLength(50, ErrorMessage ="El texto es demasiado largo")]
         public string Name { get; set; }

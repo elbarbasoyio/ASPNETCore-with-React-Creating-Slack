@@ -13,26 +13,35 @@ namespace MovieApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_movies);
         }
 
-        public IActionResult AddOrEdit()
+        public IActionResult AddOrEdit(Guid Id)
         {
-            return View();
+            var movie = _movies.FirstOrDefault(x => x.Id == Id);
+            return View(movie);
         }
 
         [HttpPost]
         public IActionResult AddOrEdit(MovieViewModel model)
         {
-            if(ModelState.IsValid)
+            var movie = _movies.FirstOrDefault(x => x.Id == model.Id);
+            if (ModelState.IsValid)
             {
-                _movies.Add(model);
+                if(movie == null)
+                {
+                    model.Id = Guid.NewGuid();
+                    _movies.Add(model);
+                }
+                else
+                {
+                    movie.Name = model.Name;
+                    movie.Genre = model.Genre;
+                }
                 return RedirectToAction(nameof(Index));
             }
-            else
-            {
-                return View();
-            }
+
+            return View();
         }
 
         [HttpGet("about")]
