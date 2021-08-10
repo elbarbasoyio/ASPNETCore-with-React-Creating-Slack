@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SlackClone.Models;
+using MovieApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SlackClone.Controllers
+namespace MovieApp.Controllers
 {
     public class AppController : Controller
     {
