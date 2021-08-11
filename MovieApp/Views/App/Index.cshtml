@@ -1,8 +1,7 @@
 ﻿@model IEnumerable<MovieViewModel>
 @{
-    ViewBag.Title = "Homepage del Barba";
+    ViewBag.Title = "IMDb";
 }
-<a asp-controller="App" asp-action="About">Acerca de nosotros</a>
 <table class="table">
     <thead>
         <tr>
@@ -28,6 +27,7 @@
                     </td>
                     <td>
                         <a asp-action="AddOrEdit" asp-route-id="@item.Id">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('¿Está seguro de borrar esta película?')">Eliminar</a>
                     </td>
                 </tr>
             }

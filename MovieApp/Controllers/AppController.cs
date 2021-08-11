@@ -40,8 +40,13 @@ namespace MovieApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-
             return View();
+        }
+
+        public IActionResult Delete(Guid id)
+        {
+            _movies.Remove(_movies.FirstOrDefault(m => m.Id == id));
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet("about")]
